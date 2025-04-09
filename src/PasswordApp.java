@@ -6,29 +6,30 @@ public class PasswordApp {
 
         System.out.println("Welcome to the password checker!");
 
-        System.out.print("Please enter your password: ");
+        while (scan.hasNextLine()){
 
-        String password = scan.nextLine();
+            String password = scan.nextLine();
 
-        System.out.println("The password is: " + password);
+            System.out.println("The password is: " + password);
 
-        if (password.length() < 12){
-            System.out.println("Password length is too short.");
-        } else {
-            System.out.println("Your password is a good length.");
-        }
-
-        char[] characters = password.toCharArray();
-
-        boolean hasSpecial = false;
-
-        for (int i = 0; i < characters.length; i++){
-            char character = characters[i];
-            if (Character.isAlphabetic(character) == false){
-                hasSpecial = true;
+            if (password.length() < 12){
+                System.out.println("Password length is too short.");
+            } else {
+                System.out.println("Your password is a good length.");
             }
-        }
 
-        System.out.println("Has a special character: " + hasSpecial);
+            char[] characters = password.toCharArray();
+
+            boolean hasSpecial = false;
+
+            for (int i = 0; i < characters.length; i++){
+                char character = characters[i];
+                if (Character.isAlphabetic(character) == false){
+                    hasSpecial = true;
+                }
+            }
+
+            System.out.println("Has a special character: " + hasSpecial);
+        }
     }
 }
