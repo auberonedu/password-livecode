@@ -17,5 +17,18 @@ public class PasswordApp {
         } else {
             System.out.println("Your password is a good length.");
         }
+
+        char[] characters = password.toCharArray();
+
+        boolean hasSpecial = false;
+
+        for (int i = 0; i < characters.length; i++){
+            char character = characters[i];
+            if (Character.isAlphabetic(character) == false){
+                hasSpecial = true;
+            }
+        }
+
+        System.out.println("Has a special character: " + hasSpecial);
     }
 }
