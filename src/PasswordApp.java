@@ -7,14 +7,29 @@ public class PasswordApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the password checker!");
 
-        String password = scanner.nextLine();
+        while(scanner.hasNextLine()){
 
-        System.out.println("The password is: " + password);
+            String password = scanner.nextLine();
 
-        if(password.length() >= 12){
-            System.out.println("your password is a good length");
-        } else {
-            System.err.println("Your password is too short");
+            System.out.println("The password is: " + password);
+
+            if(password.length() >= 12){
+                System.out.println("your password is a good length");
+            } else {
+                System.err.println("Your password is too short");
+            }
+
+            char[] characters = password.toCharArray();
+
+            boolean hasSpecial = false;
+
+            for(int i =0; i < characters.length; i++){
+                char character = characters[i];
+                if(Character.isAlphabetic(character) == false){
+                    hasSpecial = true;
+                }
+            }
+            System.out.println("Has a special character: "+ hasSpecial);
         }
-    }
-}
+     }
+ }
